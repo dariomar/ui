@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerstoreBundle"
+         value="#{adfBundle['xxsg.oracle.apps.ont.store.view.ViewControllerStoreBundle']}"/>
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.UserId.inputValue}" label="#{bindings.UserId.hints.label}"
+                      required="#{bindings.UserId.hints.mandatory}" readOnly="true"
+                      columns="#{bindings.UserId.hints.displayWidth}" maximumLength="#{bindings.UserId.hints.precision}"
+                      shortDesc="#{bindings.UserId.hints.tooltip}" id="it1">
+          <f:validator binding="#{bindings.UserId.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.UserName.inputValue}" label="#{viewcontrollerstoreBundle.userName}"
+                      required="#{bindings.UserName.hints.mandatory}" readOnly="true"
+                      columns="#{bindings.UserName.hints.displayWidth}"
+                      maximumLength="#{bindings.UserName.hints.precision}"
+                      shortDesc="#{bindings.UserName.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.UserName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.RespId.inputValue}" label="#{bindings.RespId.hints.label}"
+                      required="#{bindings.RespId.hints.mandatory}" readOnly="true"
+                      columns="#{bindings.RespId.hints.displayWidth}" maximumLength="#{bindings.RespId.hints.precision}"
+                      shortDesc="#{bindings.RespId.hints.tooltip}" id="it3">
+          <f:validator binding="#{bindings.RespId.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.ApplId.inputValue}" label="#{bindings.ApplId.hints.label}"
+                      required="#{bindings.ApplId.hints.mandatory}" readOnly="true"
+                      columns="#{bindings.ApplId.hints.displayWidth}" maximumLength="#{bindings.ApplId.hints.precision}"
+                      shortDesc="#{bindings.ApplId.hints.tooltip}" id="it4">
+          <f:validator binding="#{bindings.ApplId.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CurrentLanguage.inputValue}" label="#{viewcontrollerstoreBundle.language}"
+                      required="#{bindings.CurrentLanguage.hints.mandatory}" readOnly="true"
+                      columns="#{bindings.CurrentLanguage.hints.displayWidth}"
+                      maximumLength="#{bindings.CurrentLanguage.hints.precision}"
+                      shortDesc="#{bindings.ApplId.hints.tooltip}" id="it5">
+          <f:validator binding="#{bindings.ApplId.validator}"/>
+        </af:inputText>
+      </af:panelFormLayout>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+  </af:panelStretchLayout>
+</ui:composition>

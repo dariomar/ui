@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerstoreBundle"
+         value="#{adfBundle['xxsg.oracle.apps.ont.store.view.ViewControllerStoreBundle']}"/>
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom">
+      <af:panelGridLayout id="pgl3">
+        <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr2">
+          <af:gridCell marginStart="0px" width="50%" id="gc6" valign="bottom">
+            <af:outputText value="Copyright (c) 2010-2015, Sopra Steria Group Spa. Tutti i diritti riservati."
+                           id="copyright"/>
+          </af:gridCell>
+          <af:gridCell marginStart="0px" width="50%" marginEnd="0px" id="gc7" valign="bottom">
+            <af:selectOneChoice
+                                label="#{viewcontrollerstoreBundle.language}"
+                                required="#{bindings.LanguagesLovVO1.hints.mandatory}"
+                                shortDesc="#{bindings.LanguagesLovVO1.hints.tooltip}" id="langChoice" autoSubmit="true"
+                                value="#{pageFlowScope.LoginMB.currentLanguage}">
+              <f:selectItems value="#{bindings.LanguagesLovVO1.items}" id="si1"/>
+              <f:validator binding="#{bindings.LanguagesLovVO1.validator}"/>
+            </af:selectOneChoice>
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:panelGridLayout id="pgl2">
+        <af:gridRow marginTop="150px" height="auto" marginBottom="0px" id="gr1">
+          <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc5" halign="center" valign="middle">
+            <af:panelFormLayout id="pfl1">
+              <f:facet name="footer"/>
+              <af:image source="/images/StargateLogo.jpg" shortDesc="Stargate" id="i1"/>
+              <af:panelGridLayout id="pgl1">
+                <af:gridRow id="grLogin">
+                  <af:gridCell id="gc2" columnSpan="2" halign="center">
+                    <af:panelFormLayout id="pfl2">
+                      <f:facet name="footer"/>
+                      <af:inputText label="#{viewcontrollerstoreBundle.userName}" id="username"
+                                    value="#{pageFlowScope.LoginMB.userName}" columns="30"/>
+                      <af:inputText label="#{viewcontrollerstoreBundle.Password}" id="password"
+                                    value="#{pageFlowScope.LoginMB.password}" secret="true" columns="30"/>
+                    </af:panelFormLayout>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="grRicordami">
+                  <af:gridCell width="50%" id="gc3" halign="center">
+                    <af:selectBooleanCheckbox id="ricordami" text="#{viewcontrollerstoreBundle.Ricordami}"/>
+                  </af:gridCell>
+                  <af:gridCell width="50%" id="gc4" halign="center">
+                    <af:button text="#{viewcontrollerstoreBundle.Login}" id="login"
+                               action="#{pageFlowScope.LoginMB.doLogin}"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow id="grLink">
+                  <af:gridCell id="gc1" halign="center" columnSpan="2">
+                    <h:outputLink id="ol1" value="http://soprasg3.sopra.lan:8000/OA_HTML/RF.jsp?function_id=28846">
+                      <h:outputText id="linkAssistenza" value="#{viewcontrollerstoreBundle.assistenzaConnessione}"
+                                    style="color:Red;"/>
+                    </h:outputLink>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow id="gr3">
+                  <af:gridCell id="gc8" columnSpan="2">
+                    <af:spacer width="10" height="50" id="s1"/>
+                  </af:gridCell>
+                </af:gridRow>
+              </af:panelGridLayout>
+            </af:panelFormLayout>
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+  </af:panelStretchLayout>
+</ui:composition>

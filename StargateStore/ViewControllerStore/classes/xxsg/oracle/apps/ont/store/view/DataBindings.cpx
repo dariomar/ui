@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="xxsg.oracle.apps.ont.store.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/loginPage.jsff" usageId="xxsg_oracle_apps_ont_store_view_loginPagePageDef"/>
+    <page path="/homePage.jsff" usageId="xxsg_oracle_apps_ont_store_view_homePagePageDef"/>
+    <page path="/index.jsf" usageId="xxsg_oracle_apps_ont_store_view_indexPageDef"/>
+    <page path="/WEB-INF/login-tf.xml#login-tf@loginInitialize"
+          usageId="xxsg_oracle_apps_ont_store_view_login_tf_login_tf_loginInitializePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="xxsg_oracle_apps_ont_store_view_loginPagePageDef"
+          path="xxsg.oracle.apps.ont.store.view.pageDefs.loginPagePageDef"/>
+    <page id="xxsg_oracle_apps_ont_store_view_homePagePageDef"
+          path="xxsg.oracle.apps.ont.store.view.pageDefs.homePagePageDef"/>
+    <page id="xxsg_oracle_apps_ont_store_view_indexPageDef"
+          path="xxsg.oracle.apps.ont.store.view.pageDefs.indexPageDef"/>
+    <page id="xxsg_oracle_apps_ont_store_view_login_tf_login_tf_loginInitializePageDef"
+          path="xxsg.oracle.apps.ont.store.view.pageDefs.login_tf_login_tf_loginInitializePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="StoreAMDataControl" Package="xxsg.oracle.apps.ont.store.model.modules"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="StoreAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

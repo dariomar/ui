@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="login-tf">
+    <default-activity>loginInitialize</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>LoginMB</managed-bean-name>
+      <managed-bean-class>xxsg.oracle.apps.ont.store.view.beans.LoginMB</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="loginPage">
+      <page>/loginPage.jsff</page>
+    </view>
+    <router id="loginOk">
+      <case id="__7">
+        <expression>#{pageFlowScope.LoginMB.authResult}</expression>
+        <outcome>goHome</outcome>
+      </case>
+      <default-outcome>ko</default-outcome>
+    </router>
+    <task-flow-call id="homeTF">
+      <task-flow-reference>
+        <document>/WEB-INF/home-tf.xml</document>
+        <id>home-tf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <method-call id="loginInitialize">
+      <method>#{bindings.loginInitialize.execute}</method>
+      <outcome>
+        <fixed-outcome>loginInitialize</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>loginPage</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>check</from-outcome>
+        <to-activity-id>loginOk</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>loginOk</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>ko</from-outcome>
+        <to-activity-id>loginPage</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>goHome</from-outcome>
+        <to-activity-id>homeTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>setDefLang</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>login</from-outcome>
+        <to-activity-id>loginPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>loginInitialize</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>loginInitialize</from-outcome>
+        <to-activity-id>loginPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

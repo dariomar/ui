@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8"
+                id="login_tf_login_tf_loginInitializePageDef" Package="xxsg.oracle.apps.ont.store.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="loginInitialize" RequiresUpdateModel="true" Action="invokeMethod" MethodName="loginInitialize"
+                  IsViewObjectMethod="false" DataControl="StoreAMDataControl"
+                  InstanceName="data.StoreAMDataControl.dataProvider"
+                  ReturnName="data.StoreAMDataControl.methodResults.loginInitialize_StoreAMDataControl_dataProvider_loginInitialize_result"/>
+  </bindings>
+</pageDefinition>

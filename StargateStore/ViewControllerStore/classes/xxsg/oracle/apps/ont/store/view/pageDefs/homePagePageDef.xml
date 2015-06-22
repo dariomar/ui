@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="homePagePageDef"
+                Package="xxsg.oracle.apps.ont.store.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SessionInfoVO1" RangeSize="25" DataControl="StoreAMDataControl" id="SessionInfoVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SessionInfoVO1Iterator" id="UserId">
+      <AttrNames>
+        <Item Value="UserId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SessionInfoVO1Iterator" id="UserName">
+      <AttrNames>
+        <Item Value="UserName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SessionInfoVO1Iterator" id="RespId">
+      <AttrNames>
+        <Item Value="RespId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SessionInfoVO1Iterator" id="ApplId">
+      <AttrNames>
+        <Item Value="ApplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SessionInfoVO1Iterator" id="CurrentLanguage">
+      <AttrNames>
+        <Item Value="CurrentLanguage"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

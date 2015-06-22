@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="loginPagePageDef"
+                Package="xxsg.oracle.apps.ont.store.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LanguagesLovVO1" RangeSize="25" DataControl="StoreAMDataControl" id="LanguagesLovVO1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="LanguagesLovVO1Iterator" ListOperMode="navigation" ListIter="LanguagesLovVO1Iterator"
+          id="LanguagesLovVO1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>
